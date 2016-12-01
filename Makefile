@@ -1,16 +1,18 @@
 CC=gcc
 LD=gcc
 
+CFLAGS=-fPIC -ldl
+
 src=fake_printf.c fake_malloc.c
 obj=$(src:.c=.o)
 
 all: fake.so
 
 %.o: %.c
-	$(CC) -c -fPIC $?
+	$(CC) $(CFLAGS) -c $<
 
 fake.so: $(obj)
-	$(CC) -shared -fPIC $? -o $@
+	$(CC) -shared $(CFLAGS) $? -o $@
 
 clean:
 	$(RM) $(obj) fake.so
