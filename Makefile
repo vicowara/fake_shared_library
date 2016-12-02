@@ -1,7 +1,7 @@
 CC=gcc
 LD=gcc
 
-CFLAGS=-fPIC -ldl -W -Wall
+CFLAGS=-fPIC -ldl -W -Wall -D_GNU_SOURCE
 
 src=fake_printf.c fake_malloc.c
 obj=$(src:.c=.o)

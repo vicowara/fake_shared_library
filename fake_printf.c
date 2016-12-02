@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-#define __USE_GNU
 #include <dlfcn.h>
 
 int printf(const char *fmt, ...){
